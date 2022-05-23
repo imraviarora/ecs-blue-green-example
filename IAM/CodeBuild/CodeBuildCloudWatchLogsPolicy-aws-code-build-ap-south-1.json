@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:logs:us-west-2:711610755347:log-group:blue-green",
+                "arn:aws:logs:us-west-2:711610755347:log-group:blue-green:*"
+            ],
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ]
+        }
+    ]
+}

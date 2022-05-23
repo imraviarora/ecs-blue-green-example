@@ -1,0 +1,27 @@
+ECS Cluster Name: ecs-cluster-test
+
+[appspec.yml]
+Task definition Name: bluegreen-task
+arn:aws:ecs:us-west-2:711610755347:task-definition/bluegreen-task:1
+ContainerName: blue-green-container
+
+
+[buildspec.yml]
+IMAGE_NAME: private-blue-green
+AWS_REGION: us-west-2 # checkfor specific region
+AWS_ACCOUNT_ID: 711610755347
+
+
+[ecs-task-definition.json]
+executionRoleArn: "arn:aws:iam::711610755347:role/ecsTaskExecutionRole"
+awslogs-group: "/ecs/bluegreen-task"
+awslogs-region: "us-west-2",
+taskRoleArn: "arn:aws:iam::711610755347:role/ecsTaskExecutionRole",
+taskDefinitionArn: "arn:aws:ecs:us-west-2:711610755347:task-definition/bluegreen-task:1",
+
+
+
+IAM ROLES - Done
+Cluster - Done
+Code on SCM(CodeCommit) - Done
+CodePipeline -
